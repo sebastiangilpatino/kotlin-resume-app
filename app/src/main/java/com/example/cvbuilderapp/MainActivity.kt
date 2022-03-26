@@ -1,5 +1,6 @@
 package com.example.cvbuilderapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -25,17 +26,31 @@ class MainActivity : AppCompatActivity() {
         R.drawable.mango
     )
 
+    var titleHome = ArrayList<String>()
+    var descriptionHome = ArrayList<String>()
+    var detail = ArrayList<String>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        var s1 = resources.getStringArray(R.array.fruits);
-        var s2 = resources.getStringArray(R.array.desc);
-        var s3 = resources.getStringArray(R.array.detail);
+        val intent = intent
+        val newTitle: String? = intent.getStringExtra("title")
+        val newDescription: String? = intent.getStringExtra("description")
+        if (newTitle != null && newDescription != null) {
+            titleHome.add(newTitle)
+            descriptionHome.add(newDescription)
+        }
         rv.layoutManager = LinearLayoutManager(this)
         // Create an object for the MyAdapter
-        val adapter = MyAdapter(this, s1, s2, imageges, s3)
+        val adapter = MyAdapter(this, titleHome, descriptionHome, imageges, detail)
         // Set adapter to your RecyclerView
         rv.adapter = adapter
+        //FAB
+        val fab: View = findViewById(R.id.fab)
+        fab.setOnClickListener {
+            val intent = Intent(this, AddCard::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -47,4 +62,11 @@ class MainActivity : AppCompatActivity() {
         Toast.makeText(applicationContext, item.title.toString(), Toast.LENGTH_LONG).show()
         return super.onOptionsItemSelected(item)
     }
+
+    fun addElement(arr: Array<String>, element: String): Array<String> {
+        val mutableArray = arr.toMutableList()
+        mutableArray.add(element)
+        return mutableArray.toTypedArray()
+    }
+
 }

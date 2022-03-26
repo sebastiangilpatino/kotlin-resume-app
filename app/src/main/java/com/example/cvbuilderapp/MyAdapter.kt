@@ -10,8 +10,8 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.card_layout.view.*
 
 class MyAdapter(
-    var context: Context, var text1: Array<String>, var text2: Array<String>,
-    var img: IntArray, var text3: Array<String>
+    var context: Context, var text1: ArrayList<String>, var text2: ArrayList<String>,
+    var img: IntArray, var text3: ArrayList<String>
 ) : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyAdapter.MyViewHolder {
         val v = LayoutInflater.from(parent?.context).inflate(R.layout.card_layout, parent, false)
