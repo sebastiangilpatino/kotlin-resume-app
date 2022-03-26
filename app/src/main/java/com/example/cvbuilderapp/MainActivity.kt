@@ -36,10 +36,13 @@ class MainActivity : AppCompatActivity() {
         val intent = intent
         val newTitle: String? = intent.getStringExtra("title")
         val newDescription: String? = intent.getStringExtra("description")
+
         if (newTitle != null && newDescription != null) {
+            //added here
             titleHome.add(newTitle)
             descriptionHome.add(newDescription)
         }
+
         rv.layoutManager = LinearLayoutManager(this)
         // Create an object for the MyAdapter
         val adapter = MyAdapter(this, titleHome, descriptionHome, imageges, detail)
