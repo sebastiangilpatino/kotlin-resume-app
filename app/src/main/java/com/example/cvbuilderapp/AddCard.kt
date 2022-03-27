@@ -10,14 +10,14 @@ class AddCard : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_card)
-    }
-
-    fun addItemToHome(view: View) {
-        val title = findViewById<EditText>(R.id.editTitleAddToHome).text.toString()
-        val description = findViewById<EditText>(R.id.editDescriptionAddToHome).text.toString()
-        val intent = Intent(this, MainActivity::class.java)
-        intent.putExtra("title", title)
-        intent.putExtra("description", description)
-        startActivity(intent)
+        val btn: View = findViewById(R.id.addButtonToHome)
+        btn.setOnClickListener {
+            val title = findViewById<EditText>(R.id.editTitleAddToHome).text.toString()
+            val description = findViewById<EditText>(R.id.editDescriptionAddToHome).text.toString()
+            val intent = Intent(this, MainActivity::class.java)
+            intent.putExtra("title", title)
+            intent.putExtra("description", description)
+            startActivity(intent)
+        }
     }
 }

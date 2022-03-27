@@ -44,6 +44,5 @@
         android:id="@+id/addButtonToHome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="addItemToHome"
         android:text="Add" />
 </LinearLayout>

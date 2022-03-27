@@ -26,28 +26,25 @@ class MainActivity : AppCompatActivity() {
         R.drawable.mango
     )
 
-    var titleHome = ArrayList<String>()
-    var descriptionHome = ArrayList<String>()
-    var detail = ArrayList<String>()
+    var titleList: ArrayList<String> = DataHolder.instance!!.title;
+    var descList: ArrayList<String> = DataHolder.instance!!.desc;
+//    var detail = ArrayList<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val intent = intent
-        val newTitle: String? = intent.getStringExtra("title")
-        val newDescription: String? = intent.getStringExtra("description")
-
-        if (newTitle != null && newDescription != null) {
-            //added here
-            titleHome.add(newTitle)
-            descriptionHome.add(newDescription)
+        val title: String? = intent.getStringExtra("title")
+        val description: String? = intent.getStringExtra("description")
+        if(title != null && description != null) {
+            titleList.add(title)
+            descList.add(description)
         }
-
         rv.layoutManager = LinearLayoutManager(this)
-        // Create an object for the MyAdapter
-        val adapter = MyAdapter(this, titleHome, descriptionHome, imageges, detail)
+        val adapter = MyAdapter(this, titleList, descList, imageges)
         // Set adapter to your RecyclerView
         rv.adapter = adapter
+
         //FAB
         val fab: View = findViewById(R.id.fab)
         fab.setOnClickListener {
@@ -65,11 +62,4 @@ class MainActivity : AppCompatActivity() {
         Toast.makeText(applicationContext, item.title.toString(), Toast.LENGTH_LONG).show()
         return super.onOptionsItemSelected(item)
     }
-
-    fun addElement(arr: Array<String>, element: String): Array<String> {
-        val mutableArray = arr.toMutableList()
-        mutableArray.add(element)
-        return mutableArray.toTypedArray()
-    }
-
 }
