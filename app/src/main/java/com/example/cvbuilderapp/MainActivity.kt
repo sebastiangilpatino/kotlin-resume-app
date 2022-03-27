@@ -17,18 +17,9 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity() {
-    var imageges = intArrayOf(
-        R.drawable.apple,
-        R.drawable.banana,
-        R.drawable.cherries,
-        R.drawable.dates,
-        R.drawable.grapes,
-        R.drawable.mango
-    )
 
     var titleList: ArrayList<String> = DataHolder.instance!!.title;
     var descList: ArrayList<String> = DataHolder.instance!!.desc;
-//    var detail = ArrayList<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,7 +32,8 @@ class MainActivity : AppCompatActivity() {
             descList.add(description)
         }
         rv.layoutManager = LinearLayoutManager(this)
-        val adapter = MyAdapter(this, titleList, descList, imageges)
+        val adapter = MyAdapter(this, titleList, descList)
+
         // Set adapter to your RecyclerView
         rv.adapter = adapter
 
