@@ -1,56 +1,43 @@
 package com.example.cvbuilderapp
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
-import android.widget.ArrayAdapter
 import android.widget.Toast
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.android.material.snackbar.Snackbar
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.content_main.*
-import java.text.SimpleDateFormat
-import java.util.*
-import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity() {
-    var imageges = intArrayOf(
-        R.drawable.apple,
-        R.drawable.banana,
-        R.drawable.cherries,
-        R.drawable.dates,
-        R.drawable.grapes,
-        R.drawable.mango
-    )
-
-    var titleList: ArrayList<String> = DataHolder.instance!!.title;
-    var descList: ArrayList<String> = DataHolder.instance!!.desc;
-//    var detail = ArrayList<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val intent = intent
-        val title: String? = intent.getStringExtra("title")
-        val description: String? = intent.getStringExtra("description")
-        if(title != null && description != null) {
-            titleList.add(title)
-            descList.add(description)
-        }
-        rv.layoutManager = LinearLayoutManager(this)
-        val adapter = MyAdapter(this, titleList, descList, imageges)
-        // Set adapter to your RecyclerView
-        rv.adapter = adapter
 
-        //FAB
-        val fab: View = findViewById(R.id.fab)
-        fab.setOnClickListener {
-            val intent = Intent(this, AddCard::class.java)
-            startActivity(intent)
-        }
+        //tab adapter
+        val tabAdapter = TabAdapter(supportFragmentManager, lifecycle)
+        viewpager.adapter = tabAdapter
+        TabLayoutMediator(tlayaout, viewpager) { tab, position ->
+            when (position) {
+                0 -> {
+                    tab.text = "Home"
+                    tab.setIcon(R.drawable.home)
+                }
+                1 -> {
+                    tab.text = "About Me"
+                    tab.setIcon(R.drawable.about_me)
+                }
+                2 -> {
+                    tab.text = "Work"
+                    tab.setIcon(R.drawable.work)
+                }
+                3 -> {
+                    tab.text = "Contact"
+                    tab.setIcon(R.drawable.contacts)
+                }
+            }
+        }.attach()
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

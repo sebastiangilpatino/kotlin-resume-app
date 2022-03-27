@@ -38,6 +38,7 @@ dependencies {
     implementation 'androidx.annotation:annotation:1.2.0'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
     // Get xml ids to Kotlin Code
     apply plugin : "kotlin-android"
@@ -52,7 +53,7 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'com.google.android.material:material:1.5.0-alpha02'
     //Getting Image in a Circular View
-    implementation 'de.hdodenhof:circleimageview:3.0.1'
+//    implementation 'de.hdodenhof:circleimageview:3.0.1'
 //    implementation 'com.mikhaellopez:circularimageview:4.1.0'
     // Recycler View Dependency
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
