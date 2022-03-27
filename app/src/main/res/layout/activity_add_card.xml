@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddCard">
+
+
+    <TextView
+        android:id="@+id/TitleAddToHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:text="Title" />
+
+    <EditText
+        android:id="@+id/editTitleAddToHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Enter Title" />
+
+    <TextView
+        android:id="@+id/descriptionAddToHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:text="Description" />
+
+    <EditText
+        android:id="@+id/editDescriptionAddToHome"
+        android:layout_width="match_parent"
+        android:layout_height="361dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Enter description" />
+
+    <Button
+        android:id="@+id/addButtonToHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add" />
+</LinearLayout>
