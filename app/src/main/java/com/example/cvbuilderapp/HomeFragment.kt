@@ -8,13 +8,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_about_me.*
 
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
-    private var titleList: ArrayList<String> = DataHolder.instance!!.title;
-    private var descList: ArrayList<String> = DataHolder.instance!!.desc;
+    private var titleList: ArrayList<String> = DataHolder.instance!!.homeTitle;
+    private var descList: ArrayList<String> = DataHolder.instance!!.homeDesc;
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -26,29 +26,28 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         rv.layoutManager = linearLayoutManager
 
         val intent = requireActivity().intent
-        val title: String? = intent.getStringExtra("title")
-        val description: String? = intent.getStringExtra("description")
+        val title: String? = intent.getStringExtra("titleHome")
+        val description: String? = intent.getStringExtra("descriptionHome")
         if (title != null && description != null) {
             titleList.add(title)
             descList.add(description)
+            intent.removeExtra("titleHome")
+            intent.removeExtra("descriptionHome")
         }
 
         val adapter = MyAdapter(this.requireContext(), titleList, descList)
         // Set adapter to your RecyclerView
         rv.adapter = adapter
 
-                //FAB
+        //FAB
         val fab: View = rootView.findViewById(R.id.fab)
+
         fab.setOnClickListener {
             val intent = Intent(this.requireContext(), AddCard::class.java)
+            intent.putExtra("tab", "home")
             startActivity(intent)
         }
 
         return rootView
     }
-
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//
-//    }
 }
