@@ -33,8 +33,8 @@ class ContactFragment : Fragment(R.layout.fragment_contact) {
             intent.removeExtra("titleContact")
             intent.removeExtra("descriptionContact")
         }
-
-        val adapter = MyAdapter(this.requireContext(), titleList, descList)
+        var tab = "contact"
+        val adapter = MyAdapter(this.requireContext(), titleList, descList, tab)
         // Set adapter to your RecyclerView
         rv.adapter = adapter
 

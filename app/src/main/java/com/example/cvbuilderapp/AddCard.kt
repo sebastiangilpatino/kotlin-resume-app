@@ -15,27 +15,31 @@ class AddCard : AppCompatActivity() {
             val title = findViewById<EditText>(R.id.editTitleAddToHome).text.toString()
             val description = findViewById<EditText>(R.id.editDescriptionAddToHome).text.toString()
             val intent = intent
-            val tab: String? = intent.getStringExtra("tab")
-            if (tab == "about-me") {
-                val intent = Intent(this, MainActivity::class.java)
-                intent.putExtra("titleAboutMe", title)
-                intent.putExtra("descriptionAboutMe", description)
-                startActivity(intent)
-            } else if (tab == "home") {
-                val intent = Intent(this, MainActivity::class.java)
-                intent.putExtra("titleHome", title)
-                intent.putExtra("descriptionHome", description)
-                startActivity(intent)
-            } else if (tab == "work") {
-                val intent = Intent(this, MainActivity::class.java)
-                intent.putExtra("titleWork", title)
-                intent.putExtra("descriptionWork", description)
-                startActivity(intent)
-            } else if (tab == "contact") {
-                val intent = Intent(this, MainActivity::class.java)
-                intent.putExtra("titleContact", title)
-                intent.putExtra("descriptionContact", description)
-                startActivity(intent)
+            when (intent.getStringExtra("tab")) {
+                "about-me" -> {
+                    val intent = Intent(this, MainActivity::class.java)
+                    intent.putExtra("titleAboutMe", title)
+                    intent.putExtra("descriptionAboutMe", description)
+                    startActivity(intent)
+                }
+                "home" -> {
+                    val intent = Intent(this, MainActivity::class.java)
+                    intent.putExtra("titleHome", title)
+                    intent.putExtra("descriptionHome", description)
+                    startActivity(intent)
+                }
+                "work" -> {
+                    val intent = Intent(this, MainActivity::class.java)
+                    intent.putExtra("titleWork", title)
+                    intent.putExtra("descriptionWork", description)
+                    startActivity(intent)
+                }
+                "contact" -> {
+                    val intent = Intent(this, MainActivity::class.java)
+                    intent.putExtra("titleContact", title)
+                    intent.putExtra("descriptionContact", description)
+                    startActivity(intent)
+                }
             }
 
         }

@@ -1,5 +1,7 @@
 package com.example.cvbuilderapp
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -40,13 +42,42 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.action, menu)
         return super.onCreateOptionsMenu(menu)
     }
 
+
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        Toast.makeText(applicationContext, item.title.toString(), Toast.LENGTH_LONG).show()
+        when(item.itemId){
+            R.id.m1 -> {
+                val uri = Uri.parse("http://www.telegram.com")
+                val it = Intent(Intent.ACTION_VIEW,uri)
+                startActivity(it)
+            }
+            R.id.m2 -> {
+                val uri = Uri.parse("http://www.facebook.com")
+                val it = Intent(Intent.ACTION_VIEW,uri)
+                startActivity(it)
+            }
+            R.id.m3 -> {
+                val uri = Uri.parse("http://www.google.com")
+                val it = Intent(Intent.ACTION_VIEW,uri)
+                startActivity(it)
+            }
+            R.id.m4 -> {
+                val uri = Uri.parse("http://www.twitter.com")
+                val it = Intent(Intent.ACTION_VIEW,uri)
+                startActivity(it)
+            }
+            R.id.m5 -> {
+                val uri = Uri.parse("http://www.linkedin.com")
+                val it = Intent(Intent.ACTION_VIEW,uri)
+                startActivity(it)
+            }
+        }
         return super.onOptionsItemSelected(item)
     }
 }

@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.card_layout.view.*
 
 class MyAdapter(
-    var context: Context, var text1: ArrayList<String>, var text2: ArrayList<String>
+    var context: Context, var text1: ArrayList<String>, var text2: ArrayList<String>, var tab: String
 ) : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyAdapter.MyViewHolder {
         val v = LayoutInflater.from(parent?.context).inflate(R.layout.card_layout, parent, false)
@@ -24,9 +24,9 @@ class MyAdapter(
         }
         holder.itemView.playout.setOnClickListener {
             val intent = Intent(context, DetailActivity::class.java)
-            var res = text1!![position]
-            Toast.makeText(context, " $res clicked", Toast.LENGTH_LONG).show()
             intent.putExtra("name", text1[position])
+            intent.putExtra("description", text2[position])
+            intent.putExtra("tab", tab)
             context.startActivity(intent)
         }
     }

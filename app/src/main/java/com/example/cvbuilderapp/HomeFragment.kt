@@ -34,8 +34,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             intent.removeExtra("titleHome")
             intent.removeExtra("descriptionHome")
         }
-
-        val adapter = MyAdapter(this.requireContext(), titleList, descList)
+        var tab = "home"
+        val adapter = MyAdapter(this.requireContext(), titleList, descList, tab)
         // Set adapter to your RecyclerView
         rv.adapter = adapter
 

@@ -32,8 +32,8 @@ class AboutMeFragment : Fragment(R.layout.fragment_about_me) {
             intent.removeExtra("titleAboutMe")
             intent.removeExtra("descriptionAboutMe")
         }
-
-        val adapter = MyAdapter(this.requireContext(), titleList, descList)
+        var tab = "about-me"
+        val adapter = MyAdapter(this.requireContext(), titleList, descList,tab)
         // Set adapter to your RecyclerView
         rv.adapter = adapter
 

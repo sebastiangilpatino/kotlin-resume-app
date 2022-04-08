@@ -34,7 +34,8 @@ class WorkFragment : Fragment(R.layout.fragment_work) {
             intent.removeExtra("descriptionWork")
         }
 
-        val adapter = MyAdapter(this.requireContext(), titleList, descList)
+        var tab = "work"
+        val adapter = MyAdapter(this.requireContext(), titleList, descList, tab)
         // Set adapter to your RecyclerView
         rv.adapter = adapter
 
