@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import java.util.*
+import kotlin.collections.ArrayList
 
 class AboutMeFragment : Fragment(R.layout.fragment_about_me) {
 
@@ -27,7 +29,7 @@ class AboutMeFragment : Fragment(R.layout.fragment_about_me) {
         val title: String? = intent.getStringExtra("titleAboutMe")
         val description: String? = intent.getStringExtra("descriptionAboutMe")
         if (title != null && description != null) {
-            titleList.add(title)
+            titleList.add(title.uppercase())
             descList.add(description)
             intent.removeExtra("titleAboutMe")
             intent.removeExtra("descriptionAboutMe")

@@ -73,9 +73,8 @@ class MainActivity : AppCompatActivity() {
                 startActivity(it)
             }
             R.id.m5 -> {
-                val uri = Uri.parse("http://www.linkedin.com")
-                val it = Intent(Intent.ACTION_VIEW,uri)
-                startActivity(it)
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
             }
         }
         return super.onOptionsItemSelected(item)

@@ -6,19 +6,12 @@
     android:orientation="vertical"
     tools:context=".LoginActivity">
 
-    <ImageView
-        android:id="@+id/imageRegister"
-        android:layout_width="match_parent"
-        android:layout_height="126dp"
-        android:contentDescription="@string/app_name"
-        android:src="@drawable/walmart" />
-
     <TextView
         android:id="@+id/titleRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="create a new account"
+        android:text="Create a new account"
         android:textColor="@color/black"
         android:textSize="35sp" />
 
@@ -105,7 +98,7 @@
             android:id="@+id/buttonCreateAccount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/blue"
+            android:backgroundTint="@color/purple_500"
             android:onClick="createAccountRegistry"
             android:text="create a new account"
             android:textAllCaps="false"

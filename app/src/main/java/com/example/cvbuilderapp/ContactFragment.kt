@@ -28,7 +28,7 @@ class ContactFragment : Fragment(R.layout.fragment_contact) {
         val title: String? = intent.getStringExtra("titleContact")
         val description: String? = intent.getStringExtra("descriptionContact")
         if (title != null && description != null) {
-            titleList.add(title)
+            titleList.add(title.uppercase())
             descList.add(description)
             intent.removeExtra("titleContact")
             intent.removeExtra("descriptionContact")

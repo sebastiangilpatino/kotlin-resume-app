@@ -29,7 +29,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         val title: String? = intent.getStringExtra("titleHome")
         val description: String? = intent.getStringExtra("descriptionHome")
         if (title != null && description != null) {
-            titleList.add(title)
+            titleList.add(title.uppercase())
             descList.add(description)
             intent.removeExtra("titleHome")
             intent.removeExtra("descriptionHome")

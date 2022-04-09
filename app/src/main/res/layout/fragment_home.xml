@@ -18,10 +18,12 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/profile_image"
-                android:layout_width="120dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="4dp"
+                android:layout_width="110dp"
                 android:layout_height="120dp"
-                android:src="@drawable/goku"
-                app:civ_border_color="#FF000000"
+                android:src="@drawable/foto"
+                app:civ_border_color="@color/purple_500"
                 app:civ_border_width="2dp" />
 
             <LinearLayout
@@ -35,7 +37,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Son Goku"
+                    android:text="Jorge Gil Patino"
                     android:textColor="@color/purple_500"
                     android:textSize="40dp" />
 
@@ -44,6 +46,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:layout_marginLeft="5dp"
                     android:text="Software Engineer"
                     android:textColor="@color/purple_500"
                     android:textSize="20dp" />
@@ -69,8 +72,12 @@
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:clickable="true"
+        app:backgroundTint="@color/green"
+        app:tint="@color/black"
         android:layout_gravity="end|bottom"
         android:layout_margin="16dp"
-        android:src="@drawable/plus" />
+        app:srcCompat = "@drawable/whiteplusone"
+         />
 
 </FrameLayout>

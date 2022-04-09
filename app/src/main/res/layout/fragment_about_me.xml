@@ -14,7 +14,7 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="360dp">
+            android:layout_height="480dp">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvAboutMe"
@@ -23,14 +23,19 @@
 
         </ScrollView>
 
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fabAboutMe"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end|bottom"
-            android:layout_margin="16dp"
-            android:src="@drawable/plus" />
     </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAboutMe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:backgroundTint="@color/green"
+        app:tint="@color/black"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        app:srcCompat = "@drawable/whiteplusone"
+        />
+
 
 </FrameLayout>

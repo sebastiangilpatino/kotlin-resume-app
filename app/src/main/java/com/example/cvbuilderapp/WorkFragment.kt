@@ -28,7 +28,7 @@ class WorkFragment : Fragment(R.layout.fragment_work) {
         val title: String? = intent.getStringExtra("titleWork")
         val description: String? = intent.getStringExtra("descriptionWork")
         if (title != null && description != null) {
-            titleList.add(title)
+            titleList.add(title.uppercase())
             descList.add(description)
             intent.removeExtra("titleWork")
             intent.removeExtra("descriptionWork")
