@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CVBuilderApp">
         <activity
+            android:name=".addAboutMe"
+            android:exported="false" />
+        <activity
             android:name=".AddCard"
             android:exported="false" />
         <activity

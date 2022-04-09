@@ -23,7 +23,7 @@
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/m5"
-        android:title="LinkedIn"
-        android:icon="@drawable/linkedin"
+        android:title="Sign out"
+        android:icon="@drawable/signout"
         app:showAsAction="ifRoom"/>
 </menu>

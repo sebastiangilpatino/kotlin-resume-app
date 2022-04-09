@@ -7,7 +7,6 @@
     android:orientation="vertical"
     tools:context=".AddCard">
 
-
     <TextView
         android:id="@+id/TitleAddToHome"
         android:layout_width="match_parent"
@@ -20,6 +19,7 @@
         android:id="@+id/editTitleAddToHome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:maxLength="40"
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="Enter Title" />
@@ -33,16 +33,23 @@
         android:text="Description" />
 
     <EditText
+        android:inputType="textMultiLine"
+        android:lines="5"
+        android:minLines="5"
+        android:maxLength="226"
+        android:gravity="top|start"
+        android:maxLines="5"
         android:id="@+id/editDescriptionAddToHome"
         android:layout_width="match_parent"
-        android:layout_height="361dp"
-        android:ems="10"
-        android:inputType="textPersonName"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
         android:hint="Enter description" />
+
 
     <Button
         android:id="@+id/addButtonToHome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add" />
+        android:text="Add"
+         />
 </LinearLayout>
